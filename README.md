@@ -1,23 +1,33 @@
-# oneapi-umijs-plugin
+# OneAPI UmiJS 插件
 
-[![NPM version](https://img.shields.io/npm/v/oneapi-umijs-plugin.svg?style=flat)](https://npmjs.org/package/oneapi-umijs-plugin)
-[![NPM downloads](http://img.shields.io/npm/dm/oneapi-umijs-plugin.svg?style=flat)](https://npmjs.org/package/oneapi-umijs-plugin)
+> 🐝 [OneAPI](https://github.com/tudou527/OneAPI) 是一个用于替代 Swagger/SpringFox 的 API 工具，不需要修改后端代码，也不需要启动应用
 
-## Install
+此插件的作用是根据 OneAPI Schema 生成 services 及文档（参考了 `@umijs/plugin-openapi` 插件）
 
-```bash
-$ cnpm install
-```
+## 安装
 
 ```bash
-$ npm run dev
-$ npm run build
+npm i oneapi-umijs-plugin --save
 ```
 
-## Options
+## 配置
+`config/config.ts` 或 `.umirc.ts` 中增加配置
 
-TODO
+```
+plugins: [
+  // 开启插件
+  'oneapi-umijs-plugin',
+],
 
-## LICENSE
+oneapi: {
+  // services 中导入的 request 配置
+  requestLibPath: "import { request } from 'umi';",
+  // 使用相对路径或在线地址
+  // schemaPath: "https://oneapi.app/docs/oneapi.json",
+  schemaPath: "../oneapi-site/docs/oneapi.json",
+}
+```
 
-MIT
+run dev 时插件会自动添加文档路由，路径固定为：`/umi/plugin/oneapi`
+
+![](https://github.com/tudou527/oneapi-umijs-plugin/blob/master/demo/demo.png?raw=true)

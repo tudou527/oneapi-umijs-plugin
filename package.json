@@ -1,6 +1,6 @@
 {
   "name": "oneapi-umijs-plugin",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "oneapi umijs plugin",
   "main": "src/index.js",
   "scripts": {
