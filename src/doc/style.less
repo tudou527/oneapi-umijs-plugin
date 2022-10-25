@@ -1,0 +1,278 @@
+.apiDoc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-size: 12px;
+  color: #333;
+
+  a {
+    color: #1890ff;
+    text-decoration: none;
+  }
+
+  // 菜单
+  .menu {
+    display: flex;
+    width: 360px;
+    height: 100%;
+    overflow: hidden;
+
+    .apiTab {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      .tabHead {
+        position: relative;
+        display: flex;
+        padding: 16px 0 0 12px;
+        border-right: 1px solid #ebebeb;
+
+        &:before {
+          position: absolute;
+          top: 51px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: #ebebeb;
+          content: '';
+        }
+
+        span {
+          margin: 0 8px 0 0;
+          padding: 6px 12px;
+          font-weight: 600;
+          line-height: 22px;
+          background: #fafafa;
+          border: 1px solid #ebebeb;
+          border-radius: 3px 3px 0 0;
+          cursor: pointer;
+          user-select: none;
+        }
+
+        .activeTab {
+          position: relative;
+          background: #fff;
+          border-bottom-color: #fff;
+        }
+      }
+
+      .search {
+        position: relative;
+        padding: 12px 16px;
+        display: flex;
+        flex-direction: row;
+        border-right: 1px solid #ebebeb;
+
+        input {
+          width: 100%;
+          padding: 4px 12px;
+          height: 32px;
+          box-sizing: border-box;
+          border: 0 none;
+          border-radius: 2px 0 0 2px;
+          border: 1px solid #d9d9d9;
+          transition: all .3s;
+
+          &:focus, .ant-input-focused {
+            position: relative;
+            z-index: 0;
+            border-color: #40a9ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, .2);
+            border-right-width: 1px;
+            outline: 0;
+          }
+        }
+
+        .searchIcon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: -1px;
+          width: 34px;
+          height: 30px;
+          border-radius: 0 2px 2px 0;
+          font-size: 16px;
+          color: #666;
+          cursor: pointer;
+          border: 1px solid #d9d9d9;
+
+          &:hover {
+            color: #1890ff;
+            border-color: #40a9ff;
+          }
+        }
+      }
+
+      .tabBody {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 360px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .tabContent {
+          display: none;
+          padding: 12px 8px;
+          overflow: hidden;
+          overflow-y: auto;
+
+          .apiTitle {
+            position: relative;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            margin: 0 0 4px 0;
+            padding: 4px 0 4px 24px;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #333;
+
+            .titleIcon {
+              position: absolute;
+              top: 8px;
+              left: 6px;
+              line-height: 1;
+              font-size: 10px;
+              color: #1890ff;
+            }
+
+            h3 {
+              width: 100%;
+              margin: 0;
+              overflow: hidden;
+              font-size: 12px;
+              line-height: 18px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+
+            p {
+              display: block;
+              width: calc(100% - 12px);
+              margin: 0;
+              overflow: hidden;
+              color: rgba(69, 77, 100, 0.7);
+              font-size: 12px;
+              line-height: 18px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+          .activeTitle {
+            background: rgba(0, 0, 0, 0.1);
+          }
+        }
+        .activeContent {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .main {
+    position: relative;
+    z-index: 0;
+    flex: 1;
+    padding: 16px 24px;
+    font-size: 14px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .docCard {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 64px 0;
+
+      .apiTitle {
+        display: flex;
+        align-items: center;
+        margin: 0 0 20px 0;
+        height: 35px;
+        font-weight: bolder;
+        border-bottom: 1px solid #ebebeb;
+
+        .titleIcon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 8px 0 0;
+          font-size: 12px;
+          color: #1890ff;
+        }
+
+        .getApi, .postApi {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 6px;
+          font-size: 12px;
+          height: 18px;
+          transform: scale(0.77);
+          transform-origin: 0 50%;
+          border-radius: 2px;
+          color: #fff;
+        }
+        .getApi {
+          background: #108ee9;
+        }
+        .postApi {
+          background: rgb(255, 85, 0);
+        }
+      }
+
+      .desc {
+        margin: 0 0 16px;
+        padding: 4px 12px;
+        color: rgba(69, 77, 100, 0.7);
+        border-left: 4px solid #ebedf1;
+      }
+
+      // 入参及返回值
+      .contentItem {
+        margin: 0 0 20px 0;
+
+        table {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          border-collapse: collapse;
+
+          th, td {
+            padding: 0;
+            padding: 8px;
+            border: 1px solid #f0f0f0;
+            text-align: left;
+            font-size: 14px;
+          }
+
+          thead {
+            th {
+              background: #fafafa;
+            }
+          }
+        }
+
+        pre {
+          margin: 0;
+        }
+
+        h4 {
+          margin: 0 0 8px 0;
+        }
+      }
+    }
+  }
+}
