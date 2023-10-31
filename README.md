@@ -31,3 +31,14 @@ oneapi: {
 run dev 时插件会自动添加文档路由，路径固定为：`/umi/plugin/oneapi`
 
 ![](https://github.com/tudou527/oneapi-umijs-plugin/blob/master/demo/demo.png?raw=true)
+
+## 添加命令
+`package.json` 中增加命令
+
+```
+"scripts": {
+  "oneapi": "umi oneapi"
+}
+```
+
+然后执行 `npm run oneapi` 即可生成 `src/services` 下生成对应的 services 文件

@@ -46,6 +46,8 @@ export default (api: IApi) => {
         ...memo,
       };
     });
+
+    api.logger.info('add OneAPI document route for dev: /umi/plugin/oneapi');
   }
   
   // 返回 OneAPI Schema
